@@ -1,0 +1,75 @@
+{
+  "name": "unirate-exchange-rates",
+  "title": "UniRate Currency Exchange Rates & EU VAT Rates",
+  "description": "A regularly-updated open dataset of foreign-exchange rates for 885+ currencies (fiat + crypto) against USD, EUR and GBP, plus standard EU VAT rates. Sourced from the free UniRate API (https://unirateapi.com).",
+  "homepage": "https://unirateapi.com",
+  "version": "1.0.0",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "title": "Open Data Commons Public Domain Dedication and License 1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/1.0/"
+    }
+  ],
+  "keywords": [
+    "exchange-rates",
+    "currency",
+    "forex",
+    "fx",
+    "cryptocurrency",
+    "vat",
+    "finance",
+    "economics"
+  ],
+  "sources": [
+    {
+      "title": "UniRate API — free currency exchange rate & VAT API",
+      "path": "https://unirateapi.com"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "UniRate API",
+      "path": "https://unirateapi.com",
+      "role": "publisher"
+    }
+  ],
+  "resources": [
+    {
+      "name": "exchange-rates",
+      "path": "data/exchange-rates.csv",
+      "title": "Foreign exchange rates (USD, EUR, GBP bases)",
+      "description": "Long-format exchange rates: one row per (base, currency). `rate` is the value of 1 unit of `base` expressed in `currency`.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "date", "type": "date", "description": "UTC date the snapshot was generated (ISO-8601)." },
+          { "name": "base", "type": "string", "description": "Base currency code (USD, EUR or GBP)." },
+          { "name": "currency", "type": "string", "description": "Quote currency code (ISO 4217 or crypto ticker)." },
+          { "name": "rate", "type": "number", "description": "Value of 1 unit of `base` in `currency`." }
+        ],
+        "primaryKey": ["date", "base", "currency"]
+      }
+    },
+    {
+      "name": "eu-vat-rates",
+      "path": "data/eu-vat-rates.csv",
+      "title": "Standard EU VAT rates",
+      "description": "Standard value-added-tax rate per EU member state.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "date", "type": "date", "description": "UTC date the snapshot was generated (ISO-8601)." },
+          { "name": "country_code", "type": "string", "description": "Country code (EU VAT convention; EL = Greece, UK = United Kingdom)." },
+          { "name": "country_name", "type": "string", "description": "Country name." },
+          { "name": "vat_rate", "type": "number", "description": "Standard VAT rate, percent." }
+        ],
+        "primaryKey": ["date", "country_code"]
+      }
+    }
+  ]
+}
