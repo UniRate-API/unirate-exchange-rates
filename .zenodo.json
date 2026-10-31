@@ -1,0 +1,27 @@
+{
+  "title": "UniRate Currency Exchange Rates & EU VAT Rates — Open Dataset",
+  "description": "<p>An open, regularly-updated dataset of foreign-exchange rates for 885+ currencies (fiat <strong>and</strong> cryptocurrency) quoted against USD, EUR and GBP, together with the standard VAT rate for every EU member state.</p><p>All figures are sourced from the free <a href=\"https://unirateapi.com\">UniRate API</a> &mdash; a free currency exchange-rate and VAT API covering 170+ fiat currencies and major cryptocurrencies. Grab a free API key and read the documentation at <a href=\"https://unirateapi.com\">https://unirateapi.com</a>.</p><p><strong>Contents</strong></p><ul><li><code>data/exchange-rates.csv</code> &mdash; long-format FX table, one row per (base, currency) pair for the USD, EUR and GBP bases (~2,655 rows).</li><li><code>data/eu-vat-rates.csv</code> &mdash; standard VAT rate per EU member state.</li></ul><p>The dataset is packaged as a Frictionless Data Package (<code>datapackage.json</code>) and is fully reproducible with the included <code>curl</code>/<code>jq</code> script &mdash; no package manager, no build step, no third-party dependencies. It refreshes daily from the <a href=\"https://unirateapi.com\">UniRate API</a> via GitHub Actions. Only free-tier endpoints are used (<code>GET /api/rates</code> and <code>GET /api/vat/rates</code>).</p><p>Released into the public domain. Attribution to <a href=\"https://unirateapi.com\">UniRate API</a> is appreciated but not required.</p>",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-zero",
+  "creators": [
+    { "name": "UniRate API", "affiliation": "UniRate" }
+  ],
+  "keywords": [
+    "exchange rates",
+    "currency",
+    "forex",
+    "fx",
+    "cryptocurrency",
+    "VAT",
+    "finance",
+    "economics",
+    "foreign exchange",
+    "open data"
+  ],
+  "related_identifiers": [
+    { "identifier": "https://unirateapi.com", "relation": "isDerivedFrom", "scheme": "url" },
+    { "identifier": "https://github.com/UniRate-API/unirate-exchange-rates", "relation": "isSupplementTo", "scheme": "url" }
+  ],
+  "notes": "Data sourced from the free UniRate API (https://unirateapi.com). Only free-tier endpoints are used: GET /api/rates and GET /api/vat/rates. Canonical repository releases the data under the Open Data Commons PDDL-1.0 (public domain)."
+}
